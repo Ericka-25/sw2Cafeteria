@@ -25,8 +25,8 @@ class UserSeeder extends Seeder
         ])->assignRole('Cajero');
 
         User::factory()->create([
-            'name' => 'Isela',
-            'email' => 'isela@gmail.com',
+            'name' => 'kasandra',
+            'email' => 'kasandra@gmail.com',
             'password' => bcrypt('12345678'),
         ])->assignRole('Cajero');
         
