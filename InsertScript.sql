@@ -40,6 +40,7 @@ INSERT INTO sucursales(direccion,zona,celular) VALUES
 ('Local F3-F4 Acronal','Feria Barrio Lindo','73143557'),
 ('C/Parabano #315','Comercial Ramada','72170941'),
  ('C/Tucabaca #2135','San Martin','76651553');
+
  
 INSERT INTO productos(nombre, precio_compra, precio_venta, idproveedor) VALUES
 -- Productos de Embol (Coca-Cola y similares)
@@ -62,6 +63,9 @@ INSERT INTO productos(nombre, precio_compra, precio_venta, idproveedor) VALUES
 UPDATE proveedores SET estado = true WHERE id = 5;
 UPDATE productos SET estado = true WHERE id BETWEEN 1 AND 11;
 
+
+
+--SELECT * FROM sucursalesproductos ORDER BY idsucursal, idproducto;
 
 --delete from compras where (fecha,total,idproveedor,idsucursal) in(
 --('01-04-2024',5400,5,3),
@@ -172,3 +176,8 @@ INSERT INTO det_ventas(idventa,idproducto,cantidad,total) VALUES
 (24,7,30,600),
 (25,10,5,320),
 (26,11,4,400);
+-- ==========================================
+-- ACTUALIZAR STOCK INICIAL (EVITA STOCK = 0)
+-- ==========================================
+UPDATE sucursalesproductos
+SET stock = 200;

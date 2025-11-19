@@ -114,7 +114,6 @@ class VentasController extends Controller
             session()->push('data', $data);
         }
     }
-
     /**
      * Display the specified resource.
      */

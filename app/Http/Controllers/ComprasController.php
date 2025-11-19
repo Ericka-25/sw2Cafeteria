@@ -69,8 +69,10 @@ class ComprasController extends Controller
         $compra->idproveedor = $request->idproveedor;
         $compra->idsucursal = $request->idsucursal;
         $compra->save();
+
+
         
-        $productos = is_string($request->productos) ? json_decode($request->productos, true) : $request->productos;        
+       $productos = is_string($request->productos) ? json_decode($request->productos, true) : $request->productos;        
         foreach ($productos as $producto) {
             $detCompra = new DetCompras();
             $detCompra->idcompra = $compra->id;
@@ -81,7 +83,9 @@ class ComprasController extends Controller
         }
         return redirect()->route('compras.index');
     }
+    
 
+    
     /**
      * Display the specified resource.
      */
